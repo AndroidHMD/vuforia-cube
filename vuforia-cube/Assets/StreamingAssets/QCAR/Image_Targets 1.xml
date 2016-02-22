@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="hmd_cube_v2.Right" size="180.000000 189.850754"/>
+        <ImageTarget name="hmd_cube_v2.Top" size="240.000000 180.000000"/>
+        <ImageTarget name="hmd_cube_v2.Back" size="240.000000 190.000000"/>
+        <ImageTarget name="hmd_cube_v2.Front" size="240.000000 190.045242"/>
+        <ImageTarget name="hmd_cube_v2.Left" size="180.000000 190.012939"/>
+        <ImageTarget name="hmd_cube_v2.Bottom" size="240.000000 179.856110"/>
+        <MultiTarget name="hmd_cube_v2">
+            <Part name="hmd_cube_v2.Left" translation="-120.0 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="hmd_cube_v2.Right" translation="120.0 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="hmd_cube_v2.Front" translation="0 0 90.0" rotation="AD: 1 0 0 0"/>
+            <Part name="hmd_cube_v2.Back" translation="0 0 -90.0" rotation="AD: 0 1 0 180"/>
+            <Part name="hmd_cube_v2.Top" translation="0 95.0 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="hmd_cube_v2.Bottom" translation="0 -95.0 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>
