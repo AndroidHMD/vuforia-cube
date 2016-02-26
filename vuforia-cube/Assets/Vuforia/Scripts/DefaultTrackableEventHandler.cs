@@ -14,6 +14,13 @@ namespace Vuforia
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
+        #region PUBLIC_MEMBER_VARIABLES
+ 
+        public Transform playerRotation;
+        public Transform playerPosition;
+    
+        #endregion // PUBLIC_MEMBER_VARIABLES
+
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
@@ -52,6 +59,8 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
                 OnTrackingFound();
+                //playerPosition = Transform.position;
+                //playerRotation = Transform.rotation;
             }
             else
             {
