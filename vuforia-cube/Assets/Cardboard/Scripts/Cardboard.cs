@@ -759,4 +759,16 @@ public class Cardboard : MonoBehaviour {
   /// @deprecated Use #ComfortableViewingRange instead.
   [System.Obsolete("Use ComfortableViewingRange instead.")]
   public float MaximumComfortDistance { get { return ComfortableViewingRange.y; } }
+
+	//True if tracking is found
+	public bool TrackingFound {
+		get {
+			return trackingFound;
+		}
+		set {
+			trackingFound = value;
+		}
+	}
+	[SerializeField]
+	private bool trackingFound = true;
 }

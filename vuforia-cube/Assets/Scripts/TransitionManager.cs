@@ -33,7 +33,7 @@ public class TransitionManager : MonoBehaviour
         
         mBlackMask = FindObjectOfType<BlackMaskBehaviour>();
         SetBlackMaskVisible(false, 0);
-        SetVideoBackgroundVisible(true);
+        SetVideoBackgroundVisible(false); //was set to "true" before
 
         foreach (var go in VROnlyObjects)
         {
@@ -56,7 +56,7 @@ public class TransitionManager : MonoBehaviour
 
 	        // Query Vuforia for a target frame rate and set it in Unity:
 	        int targetFPS =
-	            VuforiaRenderer.Instance.GetRecommendedFps(ARMode ? VuforiaRenderer.FpsHint.NONE : VuforiaRenderer.FpsHint.NO_VIDEOBACKGROUND);
+	            VuforiaRenderer.Instance.GetRecommendedFps(VuforiaRenderer.FpsHint.NO_VIDEOBACKGROUND | VuforiaRenderer.FpsHint.FAST);
 	        // by default, we use Application.targetFrameRate to set the recommended frame rate.
 	        // Cardboard does not use vsync, and OVR explicitly disables it. If you use vSync in your quality settings, you should 
 	        // also set the QualitySettings.vSyncCount according to the value returned above.
@@ -65,7 +65,7 @@ public class TransitionManager : MonoBehaviour
 
             if (ARMode != isVideoCurrentlyEnabled)
 	        {
-	            SetVideoBackgroundVisible(ARMode);
+	            //SetVideoBackgroundVisible(ARMode);
             }
 
             // We apply the Frustum skewing only in AR mode 
@@ -93,7 +93,7 @@ public class TransitionManager : MonoBehaviour
 
 	    if (mPlaying)
         {
-            SetBlackMaskVisible(true, mTransitionFactor);
+            SetBlackMaskVisible(false, mTransitionFactor); //was true before
             
             float delta = (mBackward ? -1 : 1) * Time.deltaTime / transitionDuration;
             mTransitionFactor += delta;
