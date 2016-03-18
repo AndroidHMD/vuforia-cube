@@ -20,7 +20,8 @@ namespace Vuforia
 			var rot = Cardboard.SDK.HeadPose.Orientation;
 			if (myCardboard.TrackingFound) 
 			{
-				lastTransform = myCardboard.transform;
+				//lastTransform = myCardboard.transform;
+				lastTransform = myCamera.transform;
 				lastPose = myCardboard.HeadPose;
 
 				Debug.Log("FoundTracking");
@@ -31,10 +32,8 @@ namespace Vuforia
 				//transform.rotation = myCardboard.transform.localRotation;
 				transform.rotation = rot;
 
-				//.transform.position = lastPose.Position;
-				//GameObject.FindGameObjectWithTag("CameraAR").transform.rotation = myCardboard.HeadPose.Orientation;
-				//myCardboard.HeadPose.Position.Set(lastTransform.position.x, lastTransform.position.y, lastTransform.position.z);
-				//myCardboard.HeadPose.Orientation;
+				//transform.position = lastPose.Position;
+				//transform.rotation = myCardboard.HeadPose.Orientation;
 				Debug.Log("LostTracking");
 			}
 
